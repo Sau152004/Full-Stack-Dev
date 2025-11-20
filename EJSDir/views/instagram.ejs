@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+     <style>
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style> 
+    <link rel="stylesheet" href="/style.css">    link for serving the static files 
+</head> -->
+
+<!-- includes -->
+
+<%- include("includes/head.ejs");%>
+<body>
+    <h2>This Page Belongs to<%=data.name%></h2>
+    <button style="background-color: rgb(17, 210, 17); border: 1px solid red; border-radius: 5%;">Message</button>
+    <button style="background-color: rgb(20, 225, 225); border: 1px solid black; border-radius: 5%;">Folloow</button>
+
+    <p>
+        Followers:<%=data.followers%>&nbsp;&nbsp;&nbsp; Following:<%=data.following%>
+    </p>
+     <hr />    <!-- for horizontal line -->
+     
+     <% for(let postof data.posts){%>
+    <img src="<%=post.images%>" alt="some image"/>
+
+    <p>
+        Likes:<%=data.likes%>&nbsp;&nbsp;&nbsp; Comments:<%=data.comments%>
+        <%}%>
+    </p>
+</body>
+</html>
